@@ -24,19 +24,12 @@ class MoneyCollectionTypeAllStoreCurrenciesDataProvider extends BaseMoneyCollect
      */
     protected $moneyValueMapper;
 
-    /**
-     * @param \Spryker\Zed\MoneyGui\Dependency\Facade\MoneyGuiToCurrencyFacadeInterface $currencyFacade
-     * @param \Spryker\Zed\MoneyGui\Communication\Mapper\MoneyValueMapperInterface $moneyValueMapper
-     */
     public function __construct(MoneyGuiToCurrencyFacadeInterface $currencyFacade, MoneyValueMapperInterface $moneyValueMapper)
     {
         $this->currencyFacade = $currencyFacade;
         $this->moneyValueMapper = $moneyValueMapper;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\MoneyValueCollectionTransfer
-     */
     public function getMoneyValuesWithCurrenciesForCurrentStore(): MoneyValueCollectionTransfer
     {
         $moneyValueCollectionTransfer = new MoneyValueCollectionTransfer();
@@ -49,11 +42,6 @@ class MoneyCollectionTypeAllStoreCurrenciesDataProvider extends BaseMoneyCollect
         return $moneyValueCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MoneyValueCollectionTransfer $currentFormMoneyValueCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MoneyValueCollectionTransfer
-     */
     public function mergeMissingMoneyValues(MoneyValueCollectionTransfer $currentFormMoneyValueCollectionTransfer): MoneyValueCollectionTransfer
     {
         $existingCurrencyMap = $this->createCurrencyIndexMap($currentFormMoneyValueCollectionTransfer);

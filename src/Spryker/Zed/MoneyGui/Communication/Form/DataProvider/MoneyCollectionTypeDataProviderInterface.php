@@ -11,15 +11,7 @@ use Generated\Shared\Transfer\MoneyValueCollectionTransfer;
 
 interface MoneyCollectionTypeDataProviderInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\MoneyValueCollectionTransfer
-     */
     public function getMoneyValuesWithCurrenciesForCurrentStore(): MoneyValueCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MoneyValueCollectionTransfer $currentFormMoneyValueCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\MoneyValueCollectionTransfer
-     */
     public function mergeMissingMoneyValues(MoneyValueCollectionTransfer $currentFormMoneyValueCollectionTransfer): MoneyValueCollectionTransfer;
 }

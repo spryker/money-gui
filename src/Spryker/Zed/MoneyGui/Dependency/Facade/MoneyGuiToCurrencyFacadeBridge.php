@@ -32,9 +32,6 @@ class MoneyGuiToCurrencyFacadeBridge implements MoneyGuiToCurrencyFacadeInterfac
         return $this->currencyFacade->getAllStoresWithCurrencies();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\StoreWithCurrencyTransfer
-     */
     public function getCurrentStoreWithCurrencies(): StoreWithCurrencyTransfer
     {
         return $this->currencyFacade->getCurrentStoreWithCurrencies();

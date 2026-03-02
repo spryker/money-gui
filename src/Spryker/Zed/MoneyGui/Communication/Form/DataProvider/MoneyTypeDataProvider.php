@@ -34,9 +34,6 @@ class MoneyTypeDataProvider
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\MoneyGui\Dependency\Facade\MoneyGuiToStoreFacadeInterface $storeFacade
-     */
     public function __construct(MoneyGuiToStoreFacadeInterface $storeFacade)
     {
         $this->storeFacade = $storeFacade;
@@ -58,11 +55,6 @@ class MoneyTypeDataProvider
         return $options;
     }
 
-    /**
-     * @param int $idStore
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreById(int $idStore): StoreTransfer
     {
         if (!isset(static::$storeTransfersCache[$idStore])) {
@@ -91,11 +83,6 @@ class MoneyTypeDataProvider
         return 10 ** $fractionDigits;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return int
-     */
     protected function getScale(CurrencyTransfer $currencyTransfer): int
     {
         $fractionDigits = $currencyTransfer->getFractionDigits();

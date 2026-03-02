@@ -23,17 +23,11 @@ use Spryker\Zed\MoneyGui\MoneyGuiDependencyProvider;
  */
 class MoneyGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MoneyGui\Communication\Form\DataProvider\MoneyTypeDataProvider
-     */
     public function createMoneyTypeDataProvider(): MoneyTypeDataProvider
     {
         return new MoneyTypeDataProvider($this->getStoreFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MoneyGui\Communication\Form\DataProvider\MoneyCollectionTypeDataProviderInterface
-     */
     public function createMoneyCollectionTypeMultiStoreCollectionDataProvider(): MoneyCollectionTypeDataProviderInterface
     {
         return new MoneyCollectionTypeMultiStoreCollectionDataProvider(
@@ -42,9 +36,6 @@ class MoneyGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MoneyGui\Communication\Form\DataProvider\MoneyCollectionTypeDataProviderInterface
-     */
     public function createMoneyCollectionTypeAllStoreCurrenciesDataProvider(): MoneyCollectionTypeDataProviderInterface
     {
         return new MoneyCollectionTypeAllStoreCurrenciesDataProvider(
@@ -53,25 +44,16 @@ class MoneyGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MoneyGui\Communication\Mapper\MoneyValueMapperInterface
-     */
     public function createMoneyValueMapper(): MoneyValueMapperInterface
     {
         return new MoneyValueMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MoneyGui\Dependency\Facade\MoneyGuiToCurrencyFacadeInterface
-     */
     public function getCurrencyFacade(): MoneyGuiToCurrencyFacadeInterface
     {
         return $this->getProvidedDependency(MoneyGuiDependencyProvider::FACADE_CURRENCY);
     }
 
-    /**
-     * @return \Spryker\Zed\MoneyGui\Dependency\Facade\MoneyGuiToStoreFacadeInterface
-     */
     public function getStoreFacade(): MoneyGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(MoneyGuiDependencyProvider::FACADE_STORE);

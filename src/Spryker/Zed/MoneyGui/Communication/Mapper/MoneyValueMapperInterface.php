@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\MoneyValueTransfer;
 
 interface MoneyValueMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     * @param \Generated\Shared\Transfer\MoneyValueTransfer $moneyValueTransfer
-     *
-     * @return \Generated\Shared\Transfer\MoneyValueTransfer
-     */
     public function mapCurrencyTransferToMoneyValueTransfer(
         CurrencyTransfer $currencyTransfer,
         MoneyValueTransfer $moneyValueTransfer

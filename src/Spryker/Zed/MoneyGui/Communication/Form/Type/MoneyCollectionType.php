@@ -57,11 +57,6 @@ class MoneyCollectionType extends AbstractCollectionType
         parent::buildForm($builder, array_replace_recursive($defaultOptions, $options));
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
@@ -85,9 +80,6 @@ class MoneyCollectionType extends AbstractCollectionType
         $view->vars[static::OPTION_AMOUNT_PER_STORE] = $options[static::OPTION_AMOUNT_PER_STORE];
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'money_collection';
